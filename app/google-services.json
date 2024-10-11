@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554511749084",
+    "project_id": "chat-app-cfad5",
+    "storage_bucket": "chat-app-cfad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554511749084:android:850f09609607994024c919",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-qsMy0u3miOKHVmsd5nsNxykZ_iNnmKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
