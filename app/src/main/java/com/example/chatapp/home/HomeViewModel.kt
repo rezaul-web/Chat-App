@@ -23,9 +23,11 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     private fun getChannels() {
         _firebaseDatabase.getReference("channels").get().addOnSuccessListener { it ->
             val list = mutableListOf<Channel>()
-            it.children.forEach { data->
+            it.children.forEach { data ->
                 val channel = Channel(
-                    data.key!!,data.value.toString()
+                    name= data.child("name").value.toString(),
+                    id =data.child("key").value.toString(),
+                    dateCreated = data.child("dateCreated").value as Long
                 )
                 list.add(
                     channel
@@ -33,6 +35,17 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             }
             _channels.value = list
         }
-
     }
+        fun addChannel(channelName: String) {
+            val channel = Channel(name = channelName)
+           val key= _firebaseDatabase.getReference("channels").push().setValue(channel).
+                   addOnCompleteListener{
+                       if (it.isSuccessful){
+                           getChannels()
+                       }
+                   }
+        }
+
+
+
 }
