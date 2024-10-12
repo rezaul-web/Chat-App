@@ -76,7 +76,7 @@ fun SignUpScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.logo),
+                painter = painterResource(id = R.drawable.chat),
                 contentDescription = null,
                 modifier = Modifier
                     .size(200.dp)
