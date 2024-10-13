@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.chatapp.features.features.ChatScreen
 import com.example.chatapp.features.signin.SignInScreen
 import com.example.chatapp.features.signup.SignUpScreen
 import com.example.chatapp.home.HomeScreen
@@ -29,6 +30,12 @@ fun MainApp() {
             }
             composable("home") {
                 HomeScreen(navController)
+            }
+            composable("chat/{channelId}") { backStackEntry ->
+                val channelId = backStackEntry.arguments?.getString("channelId")
+                if (channelId != null) {
+                    ChatScreen(navController, channelId)
+                }
             }
         }
     }
